@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.vision.boardproc.model.MemberDao">
+
+<!-- public int insert(RentMember dto) throws SQLException; -->
+
+<insert id="insert" parameterType="org.vision.boardproc.model.Member">
+		INSERT INTO T_MEMBER(ID,PASS,NAME,EMAIL,TEL,AGE,JOB,HOBBY)
+		VALUES(#{id},#{pass},#{name},#{email},#{tel},#{age},#{job},#{hobby})
+</insert>
+
+<!-- public int delete(String key) throws SQLException; -->
+<delete id="delete" >
+	DELETE FROM T_MEMBER WHERE ID = #{param1}
+</delete>
+
+<!-- public int delete(String key) throws SQLException; -->
+<update id="delete2" >
+	UPDATE T_MEMBER SET active_status=0 WHERE ID=#{id}
+</update>
+
+<!-- public int update(RentMember dto) throws SQLException; -->
+<update id="update" parameterType="org.vision.boardproc.model.Member">
+	UPDATE T_MEMBER SET PASS=#{pass},EMAIL=#{email},NAME=#{name},
+	TEL=#{tel},AGE=#{age},JOB=#{job},HOBBY=#{hobby}
+	WHERE ID=#{id}
+</update>
+
+<!-- public RentMember select(String key) throws SQLException; -->
+<select id="select" resultType="org.vision.boardproc.model.Member_View">
+	select * from T_MEMBER_VIEW
+	where ID=#{param1}
+</select>
+
+<!-- public List<RentMember> selectAll() throws SQLException; -->
+<!-- select id="selectAll" resultType="org.vision.***.model.***Member"-->
+<select id="selectAll" resultType="org.vision.boardproc.model.Member_View">
+	SELECT * FROM T_MEMBER_VIEW ORDER BY ID ASC
+</select>
+
+<!-- public String getPassword(final String id) throws SQLException; -->
+<select id="getPassword" resultType="string">
+	SELECT PASS FROM T_MEMBER WHERE ID=#{param1} 
+</select>
+
+<!-- public int getAllCount() throws SQLException; -->
+<select id="getAllCount" resultType="int">
+	SELECT COUNT(*) FROM T_MEMBER 
+</select> 
+
+<!-- public int batch(List<RentMember> list) throws SQLException; -->
+<insert id = "batch" parameterType="java.util.List" >
+	<foreach item="dto" collection="list" 
+		open="INSERT ALL" 
+		close="SELECT * FROM SYS.DUAL" 
+		separator=" ">
+		INTO T_MEMBER (ID,PASS,NAME,EMAIL,TEL,AGE,JOB,HOBBY)
+		VALUES(#{dto.id},#{dto.pass},#{dto.name},#{dto.email},#{dto.tel},#{dto.age},#{dto.job},#{dto.hobby})
+	</foreach>
+</insert>
+
+</mapper>

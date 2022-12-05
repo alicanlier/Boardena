@@ -1,0 +1,285 @@
+@charset "UTF-8";
+
+html {
+	box-sizing: border-box; height:100%;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+nav {
+	position: fixed; top: 0; left: 0; z-index: 9999; width: 100%; align-contents:center; display: block; background-color: #ffffff; opacity:1;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background:white;
+	padding-top:131px; padding-bottom: 35px;
+	min-height: 80%;
+}
+
+p {
+	margin-top: 0.6em ;
+	margin-bottom: 0 ;
+	line-height: 1;
+	font-size:0.9em;
+	font-style: italic;
+}
+
+.logButton{
+	border: hidden;
+	border-radius: 5px;
+	background: #03b6fc;
+	font-size: 16px;
+	font-weight: bold;
+	height:30px;
+	margin:10px 5px 0 6px;
+	cursor: pointer;
+}
+
+.regButton{
+	border: hidden;
+	border-radius: 5px;
+	background: #5ed415;
+	font-size: 16px;
+	font-weight: bold;
+	color:white;
+	height:30px;
+	cursor: pointer;
+}
+
+.logButton:active, .regButton:active {
+	transform: translateY(1px);
+}
+
+.myDiv1 {
+	background-color: #ffffff; /*#a8caec;*/
+	color: #0080ff;
+	margin: auto auto 0.6em;
+	width: 90%;
+	display: flex;
+}
+
+.myDiv2 {
+	/**border: 1px outset gray;*/
+	background-color: #0080ff;
+	border: hidden;
+	border-radius: 5px;
+	text-align:center;
+	margin: auto;
+	line-height: 34px;
+	width: 90%;
+	padding: 3px 0 1px;
+}
+
+#span1 {width: 40%;}
+
+#span2 {
+	line-height: 70px; 
+	vertical-align: middle;
+	text-align: center;
+	align: center;
+	width: 20%;
+	font-family: "Brush Script MT", cursive; font-size: 80px; font-style: normal; font-variant: normal; font-weight: 700; 
+}
+
+#span2:hover {
+	cursor: pointer;
+}
+
+#span3 {
+	text-align: right;
+	float: right;
+	width: 40%;
+}
+
+.a_home {
+	outline: none;
+	text-decoration: none;
+	padding: 2px 1px 0;
+	font-size: 20px;
+	font-weight: bold;
+	color:#ffffff;
+	display: inline-block;
+	width:10%;
+}
+
+.a_home:focus {
+	border-bottom: 1px solid;
+	background: #bae498;
+}
+
+.a_home:hover {
+	border: 0 solid;
+	border: hidden;
+	border-radius: 5px;
+	background: #ffffff;
+	color: #000000;
+}
+
+.a_home:active {
+	background: #ffffff;
+	color: hotpink;
+	transform: translateY(2px);
+}
+
+#main_img {
+	width: 80%;
+	height: 90%;
+	display: block;
+	margin: auto;
+	border: hidden;
+	border-radius: 10px;
+}
+
+#menu{
+	font-weight: bold;
+	text-align: center;
+	color: gray;
+}
+	
+footer {
+	background-color: white;
+	padding: 3px;
+	text-align: center;
+	color: #0080ff;
+	font-size: 15px;
+	line-height: 16px;
+	position: fixed; top: 94%; left: 0; z-index: 9999; width: 100%; opacity:1; /*align-contents:center; display: block; background-color: #ffffff; */
+}
+
+#span4 {
+  font-family: "Brush Script MT", cursive; font-size: 20px; font-style: normal; font-variant: normal; font-weight: 700; 
+}
+
+#body input[type=text], #body input[type=textarea]{
+	width: 100%;
+	padding: 8px 3px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid black;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+#body select {
+	width: 100%;
+	padding: 5px 3px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid black;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+	
+#body input[type=submit], #body button {
+	background-color: #4CAF50;
+	color: white;
+	padding: 7px 15px;
+	margin: 4px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+	
+#body input[type=submit]:hover, #body button:hover {
+	background-color: #008080;
+}
+
+#body input[type=submit]:active, #body button:active {
+	transform: translateY(1px);
+}
+
+
+
+/******************************************************************************************************/
+
+
+/*#div_main {
+    animation: mymove 10s infinite;
+	text-align: center;
+	height: 700px;
+	width: 60%;
+	position: absolute;
+	top: 50%; left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#div_main img {
+	max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+@keyframes mymove {
+  10% {left: 48%;}
+  20% {left: 46%;}
+  30% {left: 48%;}
+  40% {left: 50%;}
+  50% {left: 52%;}
+  60% {left: 54%;}
+  70% {left: 52%;}
+  80% {left: 50%;}
+  90% {left: 48%;}
+}*/
+
+/* Clear floats after the columns */
+/*section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens 
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  margin: auto;
+  text-align:center;
+  width:80%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  margin: auto;
+  text-decoration: none;
+  font-size: 17px;
+  width:20%;
+      
+}
+
+.topnav a:hover {
+  background-color: #04AA6D;
+  color: white;
+  width: 25%;
+  padding:14px 16px;
+  margin:0;
+}
+
+.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+}
+*/
+
+
+
+
+
